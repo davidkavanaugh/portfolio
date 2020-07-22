@@ -1,0 +1,84 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    img {
+        height: 45px;
+        margin: 10px 20px 10px 20px;
+        cursor: pointer;
+        opacity: 0.9;
+        transition: opacity .3s;
+    }
+    img:hover {
+        opacity: 1;
+        transition: opacity .3s;
+    }
+    a {
+        opacity: 0.8;
+        cursor: pointer;
+        transition: opacity .3s;
+    }
+    a.active {
+        opacity: 1;
+        transition: opacity .3s;
+    }
+    a:hover {
+        opacity: 1;
+        transition: opacity .3s;
+    }
+}
+
+#links {
+    display: flex;
+    align-items: center;;
+}
+
+.link {
+    padding: 0px 25px;
+}
+
+#drawer-links {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    text-align: right;
+    margin-top: 60px;
+    margin-right: 25px;
+    position: absolute;
+    right: 0;
+}
+
+.tab > * {
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: flex-end!important;
+}
+#drawer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.drawer-link {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    opacity: 0.8;
+    transition: opacity .3s;
+}
+
+.drawer-link .active {
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.spin {
+    animation: spin .2s linear;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(180deg);
+	}
+}

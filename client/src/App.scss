@@ -1,0 +1,77 @@
+$secondary_color: #ff0000;
+
+.alert-box {
+    text-align: center;
+    color: $secondary_color;
+  }
+
+@media print {
+  #navbar,
+  #home,
+  #about-me,
+  #projects,
+  #blog,
+  #contact {
+    display: none;
+  }
+  #resume {
+    padding: 0px 0px;
+    .print{
+      display: none;
+    }
+    .container {
+      width: 100%;
+      .paper {
+        min-height: 0vh;
+        padding: 0px 0px;
+        h3 {
+          font-size: 2em;
+        }
+        h4 {
+          font-size: 1em;
+        }
+        h5 {
+          font-size: 0.6em;
+        }
+        .contact-info {
+          font-size: 0.6em;
+        }
+        .summary {
+          font-size: 0.6em;
+        }
+        .skills .skills-list .skill {
+          margin-bottom: 0px;
+          .skill-box {
+            height: 6px;
+            padding: 2px 2px;
+          }
+        }
+        ul {
+          line-height: .8em;
+          font-size: 0.6em;
+        }
+      }
+      .MuiPaper-elevation4 {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+  }
+  @page 
+    {
+        size:  auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+
+    html
+    {
+        background-color: #FFFFFF; 
+        margin: 0px;  /* this affects the margin on the html before sending to printer */
+    }
+
+    body
+    {
+        margin: 10mm 10mm; /* margin you want for the content */
+    }
+}

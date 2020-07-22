@@ -1,0 +1,88 @@
+$primary_color: #5680e9;
+
+#about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary_color;
+    min-height: 100vh;
+    color: white;
+}
+
+.about-me-graphics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    justify-content: center;
+    p {
+        margin-top: 0px;
+        margin-bottom: 35px;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        > * {
+            padding: 0px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50px;
+        }
+    }
+}
+
+#about-me .MuiSvgIcon-root {
+    width: 70px!important;
+    height: 70px!important;
+}
+
+.about-me-text {
+    padding: 5px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about-me-header {
+    padding: 0px 10px;
+    text-align: right;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-me-body {
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    p {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .row {
+        flex-direction: column!important;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
+    #about-me{
+        justify-content: flex-start;
+        padding-top: 100px;
+    }
+    .about-me-text {
+        flex-direction: column;
+    }
+    .about-me-header {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .about-me-body {
+        padding: 0 20px;
+        text-align: justify;
+    }
+}

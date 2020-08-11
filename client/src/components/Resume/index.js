@@ -259,16 +259,16 @@ export default class Resume extends React.Component {
               </div>
               <Hidden smDown>
                 <Waypoint
-                  topOffset="-65%"
-                  bottomOffset="-55%"
+                  topOffset="-35%"
+                  bottomOffset="7%"
                   onEnter={this.showPrintButton}
                   onLeave={this.hidePrintButton}
                 />
               </Hidden>
               <Hidden mdUp>
                 <Waypoint
-                  topOffset="-100%"
-                  bottomOffset="-75%"
+                  topOffset="-183%"
+                  bottomOffset="-130%"
                   onEnter={this.showPrintButton}
                   onLeave={this.hidePrintButton}
                 />

@@ -53,6 +53,7 @@ export default class Home extends React.Component {
                 component="h1"
                 variant="h1"
                 align="center"
+                style={{ padding: "0px 15px" }}
               >
                 David Kavanaugh
               </Typography>

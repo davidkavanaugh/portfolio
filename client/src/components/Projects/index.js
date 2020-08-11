@@ -371,7 +371,6 @@ export default class Projects extends React.Component {
                                   </Button>
                                 </a>
                               </div>
-                              >
                             </div>
                           </ScrollAnimation>
                           <img src={project.image} alt={project.name} />

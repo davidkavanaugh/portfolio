@@ -1,84 +1,88 @@
 .nav {
-    display: flex;
-    justify-content: space-between;
-    img {
-        height: 45px;
-        margin: 10px 20px 10px 20px;
-        cursor: pointer;
-        opacity: 0.9;
-        transition: opacity .3s;
-    }
-    img:hover {
-        opacity: 1;
-        transition: opacity .3s;
-    }
-    a {
-        opacity: 0.8;
-        cursor: pointer;
-        transition: opacity .3s;
-    }
-    a.active {
-        opacity: 1;
-        transition: opacity .3s;
-    }
-    a:hover {
-        opacity: 1;
-        transition: opacity .3s;
-    }
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 45px;
+    margin: 10px 20px 10px 20px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+  }
+  img:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  a {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  a.active {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+  a:hover {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
 }
 
 #links {
-    display: flex;
-    align-items: center;;
+  display: flex;
+  align-items: center;
 }
 
 .link {
-    padding: 0px 25px;
+  padding: 0px 25px;
 }
 
 #drawer-links {
-    display: flex;
-    flex-direction: column;
-    align-self: flex-start;
-    text-align: right;
-    margin-top: 60px;
-    margin-right: 25px;
-    position: absolute;
-    right: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  text-align: right;
+  margin-top: 90px;
+  margin-right: 25px;
+  position: absolute;
+  right: 0;
 }
 
 .tab > * {
-    display: flex!important;
-    flex-direction: row!important;
-    justify-content: flex-end!important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
 }
 #drawer {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .drawer-link {
-    font-size: 1.3em;
-    margin-bottom: 15px;
-    opacity: 0.8;
-    transition: opacity .3s;
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 .drawer-link .active {
-    opacity: 1;
-    transition: opacity .3s;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 .spin {
-    animation: spin .2s linear;
+  animation: spin 0.2s linear;
+}
+
+.MuiBackdrop-root {
+  background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
 @keyframes spin {
-	0% {
-		transform: rotateZ(0);
-	}
-	100% {
-		transform: rotateZ(180deg);
-	}
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(180deg);
+  }
 }

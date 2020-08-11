@@ -74,7 +74,7 @@ export default class Resume extends React.Component {
       responsibilities: [
         "Post payments to patient accounts",
         "Answer patient billing questions",
-        "Designed and submitted an updated UI for pugetsoundgastro.com and was awarded a cash prize",
+        "Designed and submitted an updated UI for company website and was awarded a cash prize",
       ],
     },
     {
@@ -193,19 +193,26 @@ export default class Resume extends React.Component {
           <Container className="container" maxWidth={"lg"}>
             <Paper className="paper" elevation={4}>
               <Typography component="h3" variant="h4">
-                David Kavanaugh
+                <span className="line" style={{ padding: "0 10px" }}>
+                  David
+                </span>
+                <span className="line">
+                  Kava<span className="line">naugh</span>
+                </span>
               </Typography>
               <Divider />
               <div className="contact-info">
                 <ul>
                   <li>Snohomish, WA</li>
                   <li className="email" onClick={this.handleEmail}>
-                    davidkavanaugh.dev@outlook.com
+                    <span className="line">davidkavanaugh.dev</span>
+                    <span className="line">@outlook.com</span>
                   </li>
                   <li>(336) 858-7702</li>
                   <li>
                     <a href="https://github.com/davidkavanaugh/">
-                      github.com/davidkavanaugh
+                      <span className="line">github.com/</span>
+                      <span className="line">davidkavanaugh</span>
                     </a>
                   </li>
                   <li>

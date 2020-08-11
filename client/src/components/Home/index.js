@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Hidden } from "@material-ui/core";
 import ReactLogo from "../../images/react-logo.png";
 import MongoLogo from "../../images/mongodb-logo.png";
 import NodeLogo from "../../images/node-logo.png";
@@ -41,6 +41,10 @@ export default class Home extends React.Component {
     return (
       <React.Fragment>
         <div id="home">
+          <Hidden mdUp>
+            <span></span>
+          </Hidden>
+          <span></span>
           <span></span>
           <div>
             <ScrollAnimation animateIn="fadeInDown" duration={0.5}>
@@ -66,6 +70,7 @@ export default class Home extends React.Component {
               </div>
             </ScrollAnimation>
           </div>
+          <span></span>
           <div id="keep-scrolling">
             {window.pageYOffset === 0 ? (
               <CSSTransition
@@ -95,6 +100,9 @@ export default class Home extends React.Component {
               </CSSTransition>
             ) : null}
           </div>
+          <Hidden mdUp>
+            <span></span>
+          </Hidden>
         </div>
       </React.Fragment>
     );

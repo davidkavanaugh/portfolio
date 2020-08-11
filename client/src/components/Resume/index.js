@@ -192,14 +192,16 @@ export default class Resume extends React.Component {
         <ScrollAnimation animateIn="fadeIn" style={{ width: "100%" }}>
           <Container className="container" maxWidth={"lg"}>
             <Paper className="paper" elevation={4}>
-              <Typography component="h3" variant="h4">
-                <span className="line" style={{ padding: "0 10px" }}>
-                  David
-                </span>
-                <span className="line">
-                  Kava<span className="line">naugh</span>
-                </span>
-              </Typography>
+              <Hidden smDown>
+                <Typography component="h3" variant="h4">
+                  David Kavanaugh
+                </Typography>
+              </Hidden>
+              <Hidden mdUp>
+                <Typography component="h3" variant="h5">
+                  David Kavanaugh
+                </Typography>
+              </Hidden>
               <Divider />
               <div className="contact-info">
                 <ul>
@@ -267,7 +269,7 @@ export default class Resume extends React.Component {
               </Hidden>
               <Hidden mdUp>
                 <Waypoint
-                  topOffset="-485%"
+                  topOffset="-375%"
                   bottomOffset="-240%"
                   onEnter={this.showPrintButton}
                   onLeave={this.hidePrintButton}

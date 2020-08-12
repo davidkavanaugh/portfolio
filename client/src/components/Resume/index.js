@@ -8,9 +8,11 @@ import {
 } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 import PrintIcon from "@material-ui/icons/Print";
+import PdfIcon from "@material-ui/icons/PictureAsPdf";
 import { Waypoint } from "react-waypoint";
+import ResumePng from "../../images/DavidKavanaughResume.png";
+import ResumePdf from "../../documents/DavidKavanaughResume.pdf";
 import $ from "jquery";
-import ResumeImage from "../../images/DavidKavanaughResume.png";
 import "./Resume.scss";
 
 const Divider = () => {
@@ -134,7 +136,8 @@ export default class Resume extends React.Component {
   ];
 
   componentDidMount() {
-    $(".print").hide();
+    this.hidePrintButton();
+    setTimeout(() => this.hideMobileOverlay(), 100);
   }
 
   handleWaypointEnter = () => {
@@ -156,8 +159,16 @@ export default class Resume extends React.Component {
     $(".print").show();
   };
 
+  showMobileOverlay = () => {
+    $(".resume-mobile-overlay").show();
+  };
+
   hidePrintButton = () => {
     $(".print").hide();
+  };
+
+  hideMobileOverlay = () => {
+    $(".resume-mobile-overlay").hide();
   };
 
   render() {
@@ -168,59 +179,67 @@ export default class Resume extends React.Component {
           this.Resume = section;
         }}
       >
+        <IconButton
+          className="print animate_animated animate__bounceIn"
+          onClick={this.handlePrint}
+          style={{
+            margin: "20px 20px",
+            padding: "0px 0px",
+            position: "fixed",
+            bottom: "0",
+            right: "0",
+          }}
+        >
+          <PrintIcon
+            style={{
+              fontSize: "1.5em",
+              color: "white",
+              backgroundColor: "#8860d0",
+              padding: "10px 10px",
+              borderRadius: "50%",
+            }}
+          />
+          <div className="btn-overlay"></div>
+        </IconButton>
         <Hidden mdUp>
-          <ScrollAnimation animateIn="fadeIn" duration={0.3}>
-            <Typography
-              component="h3"
-              variant="h3"
-              style={{
-                textAlign: "center",
-                padding: "25px 25px",
-                marginBottom: "25px",
-              }}
-            >
-              Resume
-            </Typography>
-          </ScrollAnimation>
+          <Waypoint
+            topOffset="-65%"
+            bottomOffset="25%"
+            onEnter={this.showMobileOverlay}
+            onLeave={this.hideMobileOverlay}
+          />
+          <Typography
+            component="h3"
+            variant="h3"
+            style={{
+              textAlign: "center",
+              paddingTop: "50px",
+              marginBottom: "25px",
+              padding: "0px 15px 0px 15px",
+            }}
+          >
+            Resume
+          </Typography>
           <ScrollAnimation animateIn="zoomIn" duration={0.3}>
+            <a href={ResumePdf} target="_blank">
+              <div className="resume-mobile-overlay animate__animated animate__fadeIn">
+                <PdfIcon fontSize="large" />
+              </div>
+            </a>
             <img
-              src={ResumeImage}
               className="resume-image"
+              src={ResumePng}
               alt="David Kavanaugh Resume"
-            ></img>
+            />
           </ScrollAnimation>
         </Hidden>
         <Hidden smDown>
-          <IconButton
-            className="print animate_animated animate__bounceIn"
-            onClick={this.handlePrint}
-            style={{
-              margin: "20px 20px",
-              padding: "0px 0px",
-              position: "fixed",
-              bottom: "0",
-              right: "0",
-            }}
-          >
-            <PrintIcon
-              style={{
-                fontSize: "1.5em",
-                color: "white",
-                backgroundColor: "#8860d0",
-                padding: "10px 10px",
-                borderRadius: "50%",
-              }}
-            />
-            <div className="btn-overlay"></div>
-          </IconButton>
           <ScrollAnimation animateIn="fadeIn" style={{ width: "100%" }}>
             <Container className="container" maxWidth={"lg"}>
               <Paper className="paper" elevation={4}>
-                <Hidden smDown>
-                  <Typography component="h3" variant="h4">
-                    David Kavanaugh
-                  </Typography>
-                </Hidden>
+                <Typography component="h3" variant="h4">
+                  David Kavanaugh
+                </Typography>
                 <Divider />
                 <div className="contact-info">
                   <ul>
@@ -280,14 +299,12 @@ export default class Resume extends React.Component {
                     })}
                   </div>
                 </div>
-                <Hidden smDown>
-                  <Waypoint
-                    topOffset="-35%"
-                    bottomOffset="0%"
-                    onEnter={this.showPrintButton}
-                    onLeave={this.hidePrintButton}
-                  />
-                </Hidden>
+                <Waypoint
+                  topOffset="-35%"
+                  bottomOffset="7%"
+                  onEnter={this.showPrintButton}
+                  onLeave={this.hidePrintButton}
+                />
                 <Divider />
                 <div className="experience">
                   <Typography component="h4" style={{ marginBottom: "5px" }}>

@@ -8,7 +8,10 @@ import {
 } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 import PrintIcon from "@material-ui/icons/Print";
+import PdfIcon from "@material-ui/icons/PictureAsPdf";
 import { Waypoint } from "react-waypoint";
+import ResumePng from "../../images/DavidKavanaughResume.png";
+import ResumePdf from "../../documents/DavidKavanaughResume.pdf";
 import $ from "jquery";
 import "./Resume.scss";
 
@@ -133,7 +136,8 @@ export default class Resume extends React.Component {
   ];
 
   componentDidMount() {
-    $(".print").hide();
+    this.hidePrintButton();
+    setTimeout(() => this.hideMobileOverlay(), 100);
   }
 
   handleWaypointEnter = () => {
@@ -155,8 +159,16 @@ export default class Resume extends React.Component {
     $(".print").show();
   };
 
+  showMobileOverlay = () => {
+    $(".resume-mobile-overlay").show();
+  };
+
   hidePrintButton = () => {
     $(".print").hide();
+  };
+
+  hideMobileOverlay = () => {
+    $(".resume-mobile-overlay").hide();
   };
 
   render() {
@@ -189,135 +201,154 @@ export default class Resume extends React.Component {
           />
           <div className="btn-overlay"></div>
         </IconButton>
-        <ScrollAnimation animateIn="fadeIn" style={{ width: "100%" }}>
-          <Container className="container" maxWidth={"lg"}>
-            <Paper className="paper" elevation={4}>
-              <Hidden smDown>
+        <Hidden mdUp>
+          <Waypoint
+            topOffset="-65%"
+            bottomOffset="25%"
+            onEnter={this.showMobileOverlay}
+            onLeave={this.hideMobileOverlay}
+          />
+          <Typography
+            component="h3"
+            variant="h3"
+            style={{
+              textAlign: "center",
+              paddingTop: "50px",
+              marginBottom: "25px",
+              padding: "0px 15px 0px 15px",
+            }}
+          >
+            Resume
+          </Typography>
+          <ScrollAnimation animateIn="zoomIn" duration={0.3}>
+            <a href={ResumePdf} target="_blank">
+              <div className="resume-mobile-overlay animate__animated animate__fadeIn">
+                <PdfIcon fontSize="large" />
+              </div>
+            </a>
+            <img
+              className="resume-image"
+              src={ResumePng}
+              alt="David Kavanaugh Resume"
+            />
+          </ScrollAnimation>
+        </Hidden>
+        <Hidden smDown>
+          <ScrollAnimation animateIn="fadeIn" style={{ width: "100%" }}>
+            <Container className="container" maxWidth={"lg"}>
+              <Paper className="paper" elevation={4}>
                 <Typography component="h3" variant="h4">
                   David Kavanaugh
                 </Typography>
-              </Hidden>
-              <Hidden mdUp>
-                <Typography component="h3" variant="h5">
-                  David Kavanaugh
-                </Typography>
-              </Hidden>
-              <Divider />
-              <div className="contact-info">
-                <ul>
-                  <li>Snohomish, WA</li>
-                  <li className="email" onClick={this.handleEmail}>
-                    <span className="line">davidkavanaugh.dev</span>
-                    <span className="line">@outlook.com</span>
-                  </li>
-                  <li>(336) 858-7702</li>
-                  <li>
-                    <a href="https://github.com/davidkavanaugh/">
-                      <span className="line">github.com/</span>
-                      <span className="line">davidkavanaugh</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/david-kavanaugh-9b444417b">
-                      linkedin.com/in/david-kavanaugh-9b444417b
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <Divider />
-              <div className="summary">
-                <p>
-                  I’m a self-taught full-stack software developer with a
-                  background in medical billing and customer service. I’ve been
-                  building websites since I was in middle school and have been
-                  developing MERN stack applications since my wife and I moved
-                  to Puget Sound in 2014. I'm currently working part-time for a
-                  local startup called BidChuck, but I'm looking for a full time
-                  position.
-                </p>
-              </div>
-              <Divider />
-              <Waypoint onEnter={this.handleWaypointEnter} />
-              <div className="skills">
-                <Typography component="h4">Technical Skills</Typography>
-                <div className="skills-list">
-                  {Object.keys(this.skills).map((key, index) => {
-                    return (
-                      <div className="skill" key={key}>
-                        <Typography component="h5" variant="h5">
-                          {key}
-                        </Typography>
-                        <div className="skill-box">
-                          <div className="meter">
-                            <span style={{ width: this.skills[key] }}>
-                              <span className={this.state.progresClass}></span>
-                            </span>
+                <Divider />
+                <div className="contact-info">
+                  <ul>
+                    <li>Snohomish, WA</li>
+                    <li className="email" onClick={this.handleEmail}>
+                      <span className="line">davidkavanaugh.dev</span>
+                      <span className="line">@outlook.com</span>
+                    </li>
+                    <li>(336) 858-7702</li>
+                    <li>
+                      <a href="https://github.com/davidkavanaugh/">
+                        <span className="line">github.com/</span>
+                        <span className="line">davidkavanaugh</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.linkedin.com/in/david-kavanaugh-9b444417b">
+                        linkedin.com/in/david-kavanaugh-9b444417b
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <Divider />
+                <div className="summary">
+                  <p>
+                    I’m a self-taught full-stack software developer with a
+                    background in medical billing and customer service. I’ve
+                    been building websites since I was in middle school and have
+                    been developing MERN stack applications since my wife and I
+                    moved to Puget Sound in 2014. I'm currently working
+                    part-time for a local startup called BidChuck, but I'm
+                    looking for a full time position.
+                  </p>
+                </div>
+                <Divider />
+                <Waypoint onEnter={this.handleWaypointEnter} />
+                <div className="skills">
+                  <Typography component="h4">Technical Skills</Typography>
+                  <div className="skills-list">
+                    {Object.keys(this.skills).map((key, index) => {
+                      return (
+                        <div className="skill" key={key}>
+                          <Typography component="h5" variant="h5">
+                            {key}
+                          </Typography>
+                          <div className="skill-box">
+                            <div className="meter">
+                              <span style={{ width: this.skills[key] }}>
+                                <span
+                                  className={this.state.progresClass}
+                                ></span>
+                              </span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-              <Hidden smDown>
                 <Waypoint
                   topOffset="-35%"
                   bottomOffset="7%"
                   onEnter={this.showPrintButton}
                   onLeave={this.hidePrintButton}
                 />
-              </Hidden>
-              <Hidden mdUp>
-                <Waypoint
-                  topOffset="-300%"
-                  bottomOffset="-240%"
-                  onEnter={this.showPrintButton}
-                  onLeave={this.hidePrintButton}
-                />
-              </Hidden>
-              <Divider />
-              <div className="experience">
-                <Typography component="h4" style={{ marginBottom: "5px" }}>
-                  Professional Experience
-                </Typography>
-                {this.experience.map((job, key) => {
-                  return (
-                    <div className="job" key={key}>
-                      <Typography component="h5" variant="h5">
-                        <strong>{job.company}</strong>, {job.location},{" "}
-                        <em>{`${job.position}, ${job.length}`}</em>
-                      </Typography>
-                      <ul style={{ marginTop: "3px" }}>
-                        {job.responsibilities.map((responsibility, key) => {
-                          return <li key={key}>{responsibility}</li>;
-                        })}
-                      </ul>
-                    </div>
-                  );
-                })}
-              </div>
-              <Divider />
-              <div className="education">
-                <Typography component="h4">Education</Typography>
-                {this.education.map((school, key) => {
-                  return (
-                    <div className="school" key={key}>
-                      <Typography component="h5" variant="h5">
-                        <strong>{school.name}</strong>, {school.location},{" "}
-                        <em>{`${school.degree}, ${school.dates}`}</em>
-                      </Typography>
-                      <ul style={{ marginTop: "3px" }}>
-                        {school.concentration.map((concentration, key) => {
-                          return <li key={key}>{concentration}</li>;
-                        })}
-                      </ul>
-                    </div>
-                  );
-                })}
-              </div>
-            </Paper>
-          </Container>
-        </ScrollAnimation>
+                <Divider />
+                <div className="experience">
+                  <Typography component="h4" style={{ marginBottom: "5px" }}>
+                    Professional Experience
+                  </Typography>
+                  {this.experience.map((job, key) => {
+                    return (
+                      <div className="job" key={key}>
+                        <Typography component="h5" variant="h5">
+                          <strong>{job.company}</strong>, {job.location},{" "}
+                          <em>{`${job.position}, ${job.length}`}</em>
+                        </Typography>
+                        <ul style={{ marginTop: "3px" }}>
+                          {job.responsibilities.map((responsibility, key) => {
+                            return <li key={key}>{responsibility}</li>;
+                          })}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+                <Divider />
+                <div className="education">
+                  <Typography component="h4">Education</Typography>
+                  {this.education.map((school, key) => {
+                    return (
+                      <div className="school" key={key}>
+                        <Typography component="h5" variant="h5">
+                          <strong>{school.name}</strong>, {school.location},{" "}
+                          <em>{`${school.degree}, ${school.dates}`}</em>
+                        </Typography>
+                        <ul style={{ marginTop: "3px" }}>
+                          {school.concentration.map((concentration, key) => {
+                            return <li key={key}>{concentration}</li>;
+                          })}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+              </Paper>
+            </Container>
+          </ScrollAnimation>
+        </Hidden>
       </section>
     );
   }

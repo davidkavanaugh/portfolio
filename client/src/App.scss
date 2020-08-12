@@ -1,9 +1,9 @@
 $secondary_color: #ff0000;
 
 .alert-box {
-    text-align: center;
-    color: $secondary_color;
-  }
+  text-align: center;
+  color: $secondary_color;
+}
 
 @media print {
   #navbar,
@@ -16,15 +16,22 @@ $secondary_color: #ff0000;
   }
   #resume {
     padding: 0px 0px;
-    .print{
+    margin: 0px 0px;
+    .print {
       display: none;
     }
     .container {
+      padding: 0px 0px;
+      margin: 0px 0px;
       width: 100%;
       .paper {
         min-height: 0vh;
         padding: 0px 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
         h3 {
+          padding: 0px 0px;
+          margin: 0px 0px;
           font-size: 2em;
         }
         h4 {
@@ -34,7 +41,18 @@ $secondary_color: #ff0000;
           font-size: 0.6em;
         }
         .contact-info {
-          font-size: 0.6em;
+          font-size: 0.9em;
+          padding: 0px 0px !important;
+        }
+        .contact-info:first-child {
+          li {
+            padding-left: 0px !important;
+          }
+        }
+        .contact-info:last-child {
+          li {
+            padding-right: 0px !important;
+          }
         }
         .summary {
           font-size: 0.6em;
@@ -47,7 +65,7 @@ $secondary_color: #ff0000;
           }
         }
         ul {
-          line-height: .8em;
+          line-height: 0.8em;
           font-size: 0.6em;
         }
       }
@@ -58,20 +76,17 @@ $secondary_color: #ff0000;
       }
     }
   }
-  @page 
-    {
-        size:  auto;   /* auto is the initial value */
-        margin: 0mm;  /* this affects the margin in the printer settings */
-    }
+  @page {
+    size: auto; /* auto is the initial value */
+    margin: 0mm; /* this affects the margin in the printer settings */
+  }
 
-    html
-    {
-        background-color: #FFFFFF; 
-        margin: 0px;  /* this affects the margin on the html before sending to printer */
-    }
+  html {
+    background-color: #ffffff;
+    margin: 0px; /* this affects the margin on the html before sending to printer */
+  }
 
-    body
-    {
-        margin: 10mm 10mm; /* margin you want for the content */
-    }
+  body {
+    margin: 0mm 10mm; /* margin you want for the content */
+  }
 }

@@ -10,17 +10,21 @@ const contactRouter = require("./routes/contact.route");
 const path = require("path");
 const { PORT, MONGO_URI } = config;
 const helmet = require("helmet");
+
+// add middleware
 app.use(cors());
 app.use(express.json());
 app.use(helmet());
-
-// Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
     extended: false,
   })
 );
 app.use(bodyParser.json());
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
 
 // DB Config
 const db = `${MONGO_URI}`;
@@ -35,12 +39,6 @@ const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("Connected to MongoDB database.");
 });
-
-// Passport middleware
-app.use(passport.initialize());
-
-// Passport config
-require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", usersRouter);

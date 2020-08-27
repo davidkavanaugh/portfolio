@@ -1,12 +1,16 @@
-import { EMAIL_SENT } from "../actions/types";
+import { EMAIL_SENT, GET_MESSAGES } from "../actions/types";
 
-const initialState = {};
+const initialState = {
+  messages: [],
+};
 
-export default function(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case EMAIL_SENT:
       return action.payload;
+    case GET_MESSAGES:
+      return { messages: action.payload };
     default:
       return state;
   }
-}
+};

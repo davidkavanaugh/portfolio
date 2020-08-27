@@ -221,7 +221,7 @@ export default class Resume extends React.Component {
             Resume
           </Typography>
           <ScrollAnimation animateIn="zoomIn" duration={0.3}>
-            <a href={ResumePdf} target="_blank">
+            <a href={ResumePdf} target="_blank" rel="noopener noreferrer">
               <div className="resume-mobile-overlay animate__animated animate__fadeIn">
                 <PdfIcon fontSize="large" />
               </div>

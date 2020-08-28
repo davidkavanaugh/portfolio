@@ -9,12 +9,10 @@ const usersRouter = require("./routes/users.route");
 const contactRouter = require("./routes/contact.route");
 const path = require("path");
 const { PORT, MONGO_URI } = config;
-const helmet = require("helmet");
 
 // add middleware
 app.use(cors());
 app.use(express.json());
-app.use(helmet());
 app.use(
   bodyParser.urlencoded({
     extended: false,

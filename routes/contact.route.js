@@ -10,7 +10,7 @@ const messageModel = require("../models/message.model");
 // @desc Email David
 // @access Public
 
-router.post("/send-email", async (req, res) => {
+router.route("/send-email/").post(async (req, res) => {
   try {
     // Form validation
     const { errors, isValid } = validateContactInput(req.body);
@@ -18,15 +18,12 @@ router.post("/send-email", async (req, res) => {
     if (!isValid) {
       return res.status(400).json(errors);
     } else {
-      await messageModel.create({
+      const message = await messageModel.create({
         name: req.body.name,
         email: req.body.email,
         message: req.body.message,
       });
-      res.json({
-        message: "Your message has been sent!",
-        info,
-      });
+      return message;
     }
   } catch (err) {
     throw new Error(err);
@@ -77,7 +74,7 @@ router.post("/send-email", async (req, res) => {
 // @desc get emails
 // @access Private
 
-router.get("/get-messages", async (req, res) => {
+router.route("/get-messages/").get(async (req, res) => {
   try {
     const messages = await messageModel.find({});
     res.json({ messages: messages });

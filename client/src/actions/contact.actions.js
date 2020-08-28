@@ -5,11 +5,11 @@ import axios from "axios";
 export const sendEmail = (formData) => (dispatch) => {
   dispatch(() => {
     axios
-      .post("/api/contact/send-email", formData)
+      .post("/api/contact/send-email/", formData)
       .then((res) => {
         dispatch({
           type: EMAIL_SENT,
-          payload: res.data.message,
+          payload: res.data,
         });
       })
       .catch((err) => {
@@ -24,7 +24,7 @@ export const sendEmail = (formData) => (dispatch) => {
 export const getMessages = () => (dispatch) => {
   dispatch(() => {
     axios
-      .get("/api/contact/get-messages")
+      .get("/api/contact/get-messages/")
       .then((res) => {
         dispatch({
           type: GET_MESSAGES,

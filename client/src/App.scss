@@ -29,20 +29,23 @@ $secondary_color: #ff0000;
         padding: 0px 0px;
         margin-top: 0px;
         margin-bottom: 0px;
+        // name
         h3 {
-          padding: 0px 0px;
-          margin: 0px 0px;
-          font-size: 2em;
+          padding-top: 0px !important;
+          margin-top: 0px !important;
+          font-size: 30px;
         }
+        // section headers
         h4 {
-          font-size: 1em;
+          font-size: 15px;
         }
+        // skills and experience headers
         h5 {
-          font-size: 0.6em;
+          font-size: 12px;
         }
         .contact-info {
-          font-size: 0.9em;
-          padding: 0px 0px !important;
+          font-size: 12px;
+          padding: 0px 5px !important;
         }
         .contact-info:first-child {
           li {
@@ -55,7 +58,7 @@ $secondary_color: #ff0000;
           }
         }
         .summary {
-          font-size: 0.6em;
+          font-size: 12px;
         }
         .skills .skills-list .skill {
           margin-bottom: 0px;
@@ -64,9 +67,11 @@ $secondary_color: #ff0000;
             padding: 2px 2px;
           }
         }
-        ul {
-          line-height: 0.8em;
-          font-size: 0.6em;
+        .experience {
+          font-size: 12px;
+        }
+        .education {
+          font-size: 12px;
         }
       }
       .MuiPaper-elevation4 {

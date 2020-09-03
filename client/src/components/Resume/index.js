@@ -45,13 +45,13 @@ export default class Resume extends React.Component {
     jQuery: "90%",
     TypeScript: "90%",
     NodeJs: "90%",
+    ExpressJs: "90%",
     "MongoDB/Typegoose": "90%",
     Redux: "85%",
-    ExpressJs: "85%",
-    Git: "75%",
+    Git: "85%",
+    "Azure DevOps": "70%",
     Hapi: "60%",
     "Mocha/Chia/Sinon": "50%",
-    "Azure DevOps": "50%",
     Docker: "25%",
     Kubernetes: "20%",
   };
@@ -63,10 +63,10 @@ export default class Resume extends React.Component {
       position: "Back End Developer",
       length: "June, 2020 - Present",
       responsibilities: [
-        "Standardize onboarding procedure for local linux development",
-        "Create User and Company models for MongoDB with Typegoose",
-        "Create endpoints on API for registration with Hapi/Joi",
+        "Create document models for MongoDB with Typegoose",
+        "Create api routes and break out mongoose functions in repositories",
         "Test with Mocha, Chai, and Sinon",
+        "validate response schemas with Hapi/Joi",
       ],
     },
     {
@@ -78,16 +78,6 @@ export default class Resume extends React.Component {
         "Post payments to patient accounts",
         "Answer patient billing questions",
         "Designed and submitted an updated UI for company website and was awarded a cash prize",
-      ],
-    },
-    {
-      company: "Advanced Home Care",
-      location: "Greensboro, NC",
-      position: "Patient Accounts Specialist",
-      length: "2011 - 2014",
-      responsibilities: [
-        "Prepared Home Health Referrals and Remittances for insurance processing",
-        "Audited denied insurance claims and resubmitted with appropriate updates and fixes",
       ],
     },
   ];
@@ -119,19 +109,14 @@ export default class Resume extends React.Component {
       location: "Online",
       degree: "Virtual Seminar",
       dates: "June, 2020",
-      concentration: ["Data Modeling", "MongoDB Realm"],
+      concentration: [],
     },
     {
       name: "Seattle Code Camp",
       location: "Seattle, WA",
       degree: "Summer Seminars",
       dates: "2017, 2018, 2019",
-      concentration: [
-        ".NET deployment with Docker",
-        "Functional C#",
-        "MongoDB",
-        "Kubernetes",
-      ],
+      concentration: [],
     },
   ];
 
@@ -242,19 +227,13 @@ export default class Resume extends React.Component {
                 </Typography>
                 <Divider />
                 <div className="contact-info">
-                  <ul>
-                    <li>Snohomish, WA</li>
+                  <ul style={{ paddingLeft: "0px" }}>
+                    <li>Snohomiwh, WA</li>
                     <li className="email" onClick={this.handleEmail}>
                       <span className="line">davidkavanaugh.dev</span>
                       <span className="line">@outlook.com</span>
                     </li>
                     <li>(336) 858-7702</li>
-                    <li>
-                      <a href="https://github.com/davidkavanaugh/">
-                        <span className="line">github.com/</span>
-                        <span className="line">davidkavanaugh</span>
-                      </a>
-                    </li>
                     <li>
                       <a href="https://www.linkedin.com/in/david-kavanaugh-9b444417b">
                         linkedin.com/in/david-kavanaugh-9b444417b

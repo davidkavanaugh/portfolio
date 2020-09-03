@@ -51,7 +51,7 @@ export default class Resume extends React.Component {
     Git: "85%",
     "Azure DevOps": "70%",
     Hapi: "60%",
-    "Mocha/Chia/Sinon": "50%",
+    "Mocha/Chai/Sinon": "50%",
     Docker: "25%",
     Kubernetes: "20%",
   };

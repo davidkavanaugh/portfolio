@@ -65,8 +65,8 @@ export default class Resume extends React.Component {
       responsibilities: [
         "Create document models for MongoDB with Typegoose",
         "Create api routes and break out mongoose functions in repositories",
-        "Test with Mocha, Chai, and Sinon",
-        "validate response schemas with Hapi/Joi",
+        "Validate response schemas with Hapi/Joi",
+        "Unit testing with Mocha, Chai, and Sinon",
       ],
     },
     {

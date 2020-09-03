@@ -74,10 +74,6 @@
     }
     .contact-info {
       padding: 0px 0px;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
       .email:hover {
         cursor: pointer;
         text-decoration: underline;
@@ -94,9 +90,10 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        justify-content: space-around;
         li {
           list-style: none;
-          padding: 0px 7px;
+          padding: 0px 0px;
         }
       }
     }

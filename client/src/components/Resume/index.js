@@ -228,7 +228,7 @@ export default class Resume extends React.Component {
                 <Divider />
                 <div className="contact-info">
                   <ul style={{ paddingLeft: "0px" }}>
-                    <li>Snohomiwh, WA</li>
+                    <li>Snohomish, WA</li>
                     <li className="email" onClick={this.handleEmail}>
                       <span className="line">davidkavanaugh.dev</span>
                       <span className="line">@outlook.com</span>
@@ -247,7 +247,7 @@ export default class Resume extends React.Component {
                     I’m a self-taught full-stack software developer with a
                     background in medical billing and customer service. I’ve
                     been building websites since I was in middle school and have
-                    been developing MERN stack applications since my wife and I
+                    been developing full stack applications since my wife and I
                     moved to Puget Sound in 2014. I'm currently working
                     part-time for a local startup called BidChuck, but I'm
                     looking for a full time position.

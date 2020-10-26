@@ -44,5 +44,9 @@
     "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
     "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
   }
 }

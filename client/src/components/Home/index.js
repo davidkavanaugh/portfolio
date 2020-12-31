@@ -58,18 +58,18 @@ export default class Home extends React.Component {
                 David Kavanaugh
               </Typography>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn" duration={0.5}>
+            <ScrollAnimation animateIn="fadeInUp" duration={0.5}>
               <Typography variant="h5" component="h5" align="center">
                 Full Stack Developer
               </Typography>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeInUp" duration={0.5}>
+            {/* <ScrollAnimation animateIn="fadeInUp" duration={0.5}>
               <div id="mern-stack">
                 <img src={MongoLogo} alt="mongodb" />
                 <img src={ReactLogo} alt="reactjs" />
                 <img src={NodeLogo} alt="nodejs" />
               </div>
-            </ScrollAnimation>
+            </ScrollAnimation> */}
           </div>
           <span></span>
           <div id="keep-scrolling">

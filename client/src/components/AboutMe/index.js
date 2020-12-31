@@ -16,41 +16,6 @@ export default class AboutMe extends React.Component {
           this.AboutMe = section;
         }}
       >
-        <div className="blue-background"></div>
-        <ScrollAnimation animateIn="fadeIn">
-          <div className="full-height">
-            <div className="about-me-graphics">
-              <div className="row">
-                <div className="organized">
-                  <div className="icon">
-                    <EventNoteIcon />
-                  </div>
-                  <p>Organized</p>
-                </div>
-                <div className="collaborative">
-                  <div className="icon">
-                    <PeopleIcon />
-                  </div>
-                  <p>Collaborative</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="responsive">
-                  <div className="icon">
-                    <DevicesIcon />
-                  </div>
-                  <p>Responsive</p>
-                </div>
-                <div className="intuitive">
-                  <div className="icon">
-                    <EmojiObjectsIcon />
-                  </div>
-                  <p>Intuitive</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ScrollAnimation>
         <div className="about-me-text">
           <ScrollAnimation animateIn="fadeIn">
             <div className="about-me-header">
@@ -84,6 +49,42 @@ export default class AboutMe extends React.Component {
                 learn new languages and technologies, such as{" "}
                 <em>React, Angular, Django</em> and <em>ASP.NET</em>
               </Typography>
+            </div>
+          </ScrollAnimation>
+        </div>
+        <div className="blue-background">
+          <ScrollAnimation animateIn="fadeIn">
+            <div className="full-height">
+              <div className="about-me-graphics">
+                <div className="row">
+                  <div className="organized">
+                    <div className="icon">
+                      <EventNoteIcon />
+                    </div>
+                    <p>Organized</p>
+                  </div>
+                  <div className="collaborative">
+                    <div className="icon">
+                      <PeopleIcon />
+                    </div>
+                    <p>Collaborative</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="responsive">
+                    <div className="icon">
+                      <DevicesIcon />
+                    </div>
+                    <p>Responsive</p>
+                  </div>
+                  <div className="intuitive">
+                    <div className="icon">
+                      <EmojiObjectsIcon />
+                    </div>
+                    <p>Intuitive</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </ScrollAnimation>
         </div>

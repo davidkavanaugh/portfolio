@@ -1,8 +1,5 @@
 import React from "react";
 import { Typography, Hidden } from "@material-ui/core";
-import ReactLogo from "../../images/react-logo.png";
-import MongoLogo from "../../images/mongodb-logo.png";
-import NodeLogo from "../../images/node-logo.png";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import { CSSTransition } from "react-transition-group";
 import { Link } from "react-scroll";

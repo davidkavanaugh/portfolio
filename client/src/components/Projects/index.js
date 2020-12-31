@@ -1,79 +1,46 @@
 import React from "react";
 import { Paper, Typography, Hidden, Button } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
-import Img1 from "../../images/project1.jpg";
-import Img2 from "../../images/project2.jpg";
-import Img3 from "../../images/project3.jpg";
-import Img4 from "../../images/project4.jpg";
-import Img5 from "../../images/project5.jpg";
-import Img6 from "../../images/project6.jpg";
+import DungeonMuttsImg from "../../images/dungeon_mutts.jpg";
+import FarmStandImg from "../../images/farmstand.jpg";
+import CallCenterImg from "../../images/call_center.jpg";
 
 import "./Projects.scss";
 
 export default class Projects extends React.Component {
   projects = [
     {
-      name: "Call Center",
-      image: Img1,
-      url: "https://mern-stack-call-center.herokuapp.com",
-      code: "https://github.com/davidkavanaugh/Call-Center",
-      prevProject: "previous project",
+      name: "Dungeon Mutts",
+      image: DungeonMuttsImg,
+      url: "http://54.151.112.14/",
+      code: "https://github.com/davidkavanaugh/DungeonMutts",
       description: (
         <p>
-          Customer Relationship Manager based on an{" "}
+          Multiplayer turn-based rpg dungeon crawler built with a React client
+          and an ASP.NET backend API.
+        </p>
+      ),
+    },
+    {
+      name: "FarmStand",
+      image: FarmStandImg,
+      url: "http://54.241.134.58/",
+      code: "https://github.com/davidkavanaugh/farmstand",
+      description: <p>E-Commerce Django app with Stripe payment API.</p>,
+    },
+    {
+      name: "Call Center",
+      image: CallCenterImg,
+      url: "https://mern-stack-call-center.herokuapp.com",
+      code: "https://github.com/davidkavanaugh/Call-Center",
+      description: (
+        <p>
+          Customer Relationship Manager built with React, MongoDB, Express, and
+          Node
           <a href="https://github.com/davidkavanaugh/call-notes">old project</a>
           .
         </p>
       ),
-    },
-    {
-      name: "Company Directory",
-      image: Img2,
-      url: "https://mern-stack-company-directory.herokuapp.com",
-      code: "https://github.com/davidkavanaugh/Company-Directory",
-      description: (
-        <p>
-          Sortable data table <br />
-          <br />
-          username: admin
-          <br />
-          password: Password123
-        </p>
-      ),
-    },
-    {
-      name: "React Calculator",
-      image: Img3,
-      url: "https://codepen.io/davidkavanaugh/full/eYmXvQx",
-      code: "https://codepen.io/davidkavanaugh/pen/eYmXvQx",
-      description: <p>Add, subtract, multiply, divide...</p>,
-    },
-    {
-      name: "React Drum Machine",
-      image: Img4,
-      url: "https://codepen.io/davidkavanaugh/full/PoYLoMj",
-      code: "https://codepen.io/davidkavanaugh/pen/PoYLoMj",
-      description: (
-        <p>
-          Turn up.
-          <br />
-          Rock out.
-        </p>
-      ),
-    },
-    {
-      name: "Markdown Previewer",
-      image: Img5,
-      url: "https://codepen.io/davidkavanaugh/full/BaBMQgz",
-      code: "https://codepen.io/davidkavanaugh/pen/BaBMQgz",
-      description: <p>Editor build in React.</p>,
-    },
-    {
-      name: "React D3 Bar Chart",
-      image: Img6,
-      url: "https://codepen.io/davidkavanaugh/full/abOmKwa",
-      code: "https://codepen.io/davidkavanaugh/pen/abOmKwa",
-      description: <p>Data visualization</p>,
     },
   ];
 

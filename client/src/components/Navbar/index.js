@@ -14,9 +14,9 @@ const Navbar = () => {
     Projects: {
       url: "projects",
     },
-    Resume: {
-      url: "resume",
-    },
+    // Resume: {
+    //   url: "resume",
+    // },
     // "Blog": {
     //     "url": "blog"
     // },

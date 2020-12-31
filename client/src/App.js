@@ -15,7 +15,7 @@ function App() {
       <Home />
       <AboutMe />
       <Projects />
-      <Resume />
+      {/* <Resume /> */}
       {/* <Blog /> */}
       <Contact />
     </React.Fragment>

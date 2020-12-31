@@ -80,14 +80,9 @@ export default class AboutMe extends React.Component {
                 I enjoy writing <em>elegant code</em> to solve complex problems.{" "}
               </Typography>
               <Typography component="p">
-                I'm a confident <em>MERN stack developer</em> with three years
-                of experience using <em>MongoDB, ExpressJS, ReactJS,</em> and{" "}
-                <em>NodeJS.</em>
-              </Typography>
-              <Typography component="p">
                 I'm a <em>flexible developer,</em> willing and able to quickly
                 learn new languages and technologies, such as{" "}
-                <em>TypeScript, Hapi, Docker,</em> and <em>Kubernetes.</em>
+                <em>React, Angular, Django</em> and <em>ASP.NET</em>
               </Typography>
             </div>
           </ScrollAnimation>

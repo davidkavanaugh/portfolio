@@ -36,9 +36,7 @@ export default class Projects extends React.Component {
       description: (
         <p>
           Customer Relationship Manager built with React, MongoDB, Express, and
-          Node
-          <a href="https://github.com/davidkavanaugh/call-notes">old project</a>
-          .
+          Node.
         </p>
       ),
     },

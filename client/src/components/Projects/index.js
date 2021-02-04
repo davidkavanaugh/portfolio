@@ -3,7 +3,6 @@ import { Paper, Typography, Hidden, Button } from "@material-ui/core";
 import ScrollAnimation from "react-animate-on-scroll";
 import DungeonMuttsImg from "../../images/dungeon_mutts.jpg";
 import FarmStandImg from "../../images/farmstand.jpg";
-import CallCenterImg from "../../images/call_center.jpg";
 
 import "./Projects.scss";
 
@@ -12,7 +11,7 @@ export default class Projects extends React.Component {
     {
       name: "Dungeon Mutts",
       image: DungeonMuttsImg,
-      url: "http://54.151.112.14/",
+      url: "http://18.144.164.70/",
       code: "https://github.com/davidkavanaugh/DungeonMutts",
       description: (
         <p>
@@ -24,21 +23,9 @@ export default class Projects extends React.Component {
     {
       name: "FarmStand",
       image: FarmStandImg,
-      url: "http://54.241.134.58/",
+      url: "http://54.219.171.48/",
       code: "https://github.com/davidkavanaugh/farmstand",
       description: <p>E-Commerce Django app with Stripe payment API.</p>,
-    },
-    {
-      name: "Call Center",
-      image: CallCenterImg,
-      url: "https://mern-stack-call-center.herokuapp.com",
-      code: "https://github.com/davidkavanaugh/Call-Center",
-      description: (
-        <p>
-          Customer Relationship Manager built with React, MongoDB, Express, and
-          Node.
-        </p>
-      ),
     },
   ];
 

@@ -1,68 +1,22 @@
 import React from "react";
-import { connect } from "react-redux";
-import { sendEmail } from "../../actions/contact.actions";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Button,
-  TextField,
-  Container,
-  Typography,
-} from "@material-ui/core";
+import { Container, Typography, IconButton } from "@material-ui/core";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import ScrollAnimation from "react-animate-on-scroll";
 
 import "./Contact.scss";
 
 class Contact extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: "",
-      email: "",
-      message: "",
-      alert: false,
-      errors: {},
-      open: false,
-    };
+  handleSocialBtn(platform) {
+    let url = "";
+    if (platform === "linkedin") {
+      url = "https://www.linkedin.com/in/david-kavanaugh-9b444417b/";
+    }
+    if (platform === "github") {
+      url = "https://github.com/davidkavanaugh";
+    }
+    window.location.href = url;
   }
-  onChange = (e) => {
-    this.setState({
-      ...this.state,
-      [e.target.name]: e.target.value,
-      alert: false,
-      errors: {},
-    });
-  };
-
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-    const formData = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message,
-    };
-    this.props.sendEmail(formData);
-    setTimeout(() => {
-      this.setState({
-        name: "",
-        email: "",
-        message: "",
-        alert: "",
-        errors: {},
-        open: true,
-      });
-    }, 1000);
-  };
-
   render() {
     return (
       <section
@@ -73,76 +27,46 @@ class Contact extends React.Component {
       >
         <ScrollAnimation animateIn="fadeIn" style={{ width: "100%" }}>
           <Container maxWidth="sm">
-            <form onSubmit={this.onSubmit}>
-              <Typography component="h3" variant="h3">
-                Email me.
+            <Typography component="h3" variant="h3">
+              Contact Info
+            </Typography>
+            <div className="contact-text">
+              <Typography component="p">
+                <a
+                  href="mailto:davidkavanaugh.dev@outlook.com?subject=Re: Portfolio"
+                  className="unselectable"
+                >
+                  davidkavanaugh.dev
+                  <span className="breakpoint">@outlook.com</span>
+                </a>
               </Typography>
-              <TextField
-                label="Name"
-                name="name"
-                value={this.state.name}
-                onChange={this.onChange}
-                variant="outlined"
-                required
-              />
-              <TextField
-                label="Email"
-                name="email"
-                type="email"
-                variant="outlined"
-                value={this.state.email}
-                onChange={this.onChange}
-                required
-              />
-              <TextField
-                label="Message"
-                name="message"
-                value={this.state.message}
-                onChange={this.onChange}
-                variant="outlined"
-                multiline
-                rows={7}
-                required
-              />
-              <Button
-                type="submit"
-                variant="contained"
-                disableElevation
-                color="secondary"
-              >
-                Submit
-              </Button>
-            </form>
+              <Typography component="p">
+                <a href="tel:1-336-858-7702" className="unselectable">
+                  (336) 858-7702
+                </a>
+              </Typography>
+              <Typography component="p">
+                <IconButton
+                  className="iconBtn"
+                  edge="start"
+                  onClick={() => this.handleSocialBtn("linkedin")}
+                >
+                  <LinkedInIcon fontSize="inherit" />
+                </IconButton>
+                <IconButton
+                  className="iconBtn"
+                  edge="end"
+                  onClick={() => this.handleSocialBtn("github")}
+                >
+                  <GitHubIcon fontSize="inherit" />
+                </IconButton>
+              </Typography>
+            </div>
           </Container>
         </ScrollAnimation>
-        <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle id="alert-dialog-title">{"Thank you!"}</DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              Your message has been sent.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              Close
-            </Button>
-          </DialogActions>
-        </Dialog>
       </section>
     );
   }
 }
-const mapStateToProps = (state) => ({
-  contact: state.contact,
-});
 
-const mapDispatchToProps = {
-  sendEmail,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+export default Contact;

@@ -85,7 +85,6 @@ class NavDrawer extends React.Component {
                     hashSpy={true}
                     duration={500}
                     isDynamic={true}
-                    onSetActive={() => console.log(key)}
                     ignoreCancelEvents={false}
                   >
                     {key}

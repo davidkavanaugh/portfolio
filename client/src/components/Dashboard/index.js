@@ -11,7 +11,6 @@ class Dashboard extends React.Component {
     this.props.getMessages();
   };
   render() {
-    console.log(this.props.contact.messages);
     return (
       <div id="dashboard">
         <Button onClick={this.props.logoutUser}>Logout</Button>

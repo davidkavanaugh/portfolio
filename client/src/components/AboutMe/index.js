@@ -71,7 +71,7 @@ export default class AboutMe extends React.Component {
                 Most recently, I’ve been working remotely as a back-end engineer
                 at bidCHUCK.com. We’re building a <em>NodeJs</em> API in{" "}
                 <em>Hapi</em> with <em>TypeScript</em>. The team is dedicated to
-                <em>Test Driven Development</em> and{" "}
+                <em> Test Driven Development</em> and{" "}
                 <em>self-documenting code</em>.
               </Typography>
               <Typography component="p">

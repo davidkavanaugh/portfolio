@@ -1,5 +1,13 @@
 $primary_color: #5680e9;
-
+a {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:active {
+  color: white;
+}
 #about-me {
   display: flex;
   flex-direction: column;
@@ -32,11 +40,6 @@ $primary_color: #5680e9;
   }
 }
 
-#about-me .MuiSvgIcon-root {
-  width: 70px !important;
-  height: 70px !important;
-}
-
 .about-me-text {
   padding: 5px 5px;
   display: flex;
@@ -52,18 +55,54 @@ $primary_color: #5680e9;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-end;
 }
 
 .about-me-body {
   padding: 0px 10px;
   display: flex;
   flex-direction: column;
+  max-width: 970px;
   p {
     margin-bottom: 10px;
   }
 }
 
+.about-me-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  .iconBtn {
+    color: white;
+    font-size: 30px;
+    padding: 6px;
+    margin: 0px 3px;
+  }
+  .MuiIconButton-edgeStart {
+    margin-left: -9px;
+  }
+}
+
+.about-me-profilePic {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  img {
+    border-radius: 50%;
+    width: 100%;
+  }
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 @media only screen and (max-width: 575px) {
   .row {
     flex-direction: column !important;
@@ -85,11 +124,20 @@ $primary_color: #5680e9;
     flex-direction: column;
   }
   .about-me-header {
-    text-align: center;
+    align-items: center;
     margin-bottom: 15px;
   }
   .about-me-body {
     padding: 0 20px;
     text-align: left;
+  }
+  .about-me-contact {
+    align-items: flex-end;
+    .MuiIconButton-edgeStart {
+      margin-left: 0px;
+    }
+    .MuiIconButton-edgeEnd {
+      margin-right: -9px;
+    }
   }
 }

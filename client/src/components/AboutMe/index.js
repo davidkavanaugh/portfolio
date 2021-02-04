@@ -1,13 +1,22 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import EventNoteIcon from "@material-ui/icons/EventNote";
-import PeopleIcon from "@material-ui/icons/People";
-import DevicesIcon from "@material-ui/icons/Devices";
-import EmojiObjectsIcon from "@material-ui/icons/EmojiObjects";
+import { Typography, IconButton } from "@material-ui/core";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import ScrollAnimation from "react-animate-on-scroll";
+import * as ProfilePic from "../../images/ProfilePic_square.jpg";
 import "./AboutMe.scss";
 
 export default class AboutMe extends React.Component {
+  handleSocialBtn(platform) {
+    let url = "";
+    if (platform === "linkedin") {
+      url = "https://www.linkedin.com/in/david-kavanaugh-9b444417b/";
+    }
+    if (platform === "github") {
+      url = "https://github.com/davidkavanaugh";
+    }
+    window.location.href = url;
+  }
   render() {
     return (
       <section
@@ -19,6 +28,9 @@ export default class AboutMe extends React.Component {
         <div className="about-me-text">
           <ScrollAnimation animateIn="fadeIn">
             <div className="about-me-header">
+              <div className="about-me-profilePic">
+                <img src={ProfilePic} alt="self-portrait" />
+              </div>
               <Typography
                 component="h3"
                 variant="subtitle1"
@@ -42,13 +54,61 @@ export default class AboutMe extends React.Component {
                 <em>Seattle, Washington.</em>
               </Typography>
               <Typography component="p">
-                I enjoy writing <em>elegant code</em> to solve complex problems.{" "}
+                I started learning <em>HTML</em> and <em>CSS</em> in middle
+                school when my friends and I wanted to make a website for our
+                band. I started developing <em>full-stack applications</em> in
+                2017. I have been writing code <em>professionally</em> since
+                2020.{" "}
               </Typography>
               <Typography component="p">
-                I'm a <em>flexible developer,</em> willing and able to quickly
-                learn new languages and technologies, such as{" "}
-                <em>React, Angular, Django</em> and <em>ASP.NET</em>
+                I’m a proficient <em>Node</em>, <em>.NET</em>, and{" "}
+                <em>Django</em> developer, and I’m able to quickly learn new
+                languages and stacks. I have a passion for group-coding and
+                collaboration--I enjoy talking through challenges with peers and
+                discussing strategies for the best solutions.
               </Typography>
+              <Typography component="p">
+                Most recently, I’ve been working remotely as a back-end engineer
+                at bidCHUCK.com. We’re building a <em>NodeJs</em> API in{" "}
+                <em>Hapi</em> with <em>TypeScript</em>. The team is dedicated to
+                <em>Test Driven Development</em> and{" "}
+                <em>self-documenting code</em>.
+              </Typography>
+              <Typography component="p">
+                If you have any questions or would like to speak further, please
+                contact me by email or phone.
+              </Typography>
+              <div className="about-me-contact">
+                <Typography component="p">
+                  <a
+                    href="mailto:davidkavanaugh.dev@outlook.com?subject=Re: Portfolio"
+                    className="unselectable"
+                  >
+                    davidkavanaugh.dev@outlook.com
+                  </a>
+                </Typography>
+                <Typography component="p">
+                  <a href="tel:1-336-858-7702" className="unselectable">
+                    (336) 858-7702
+                  </a>
+                </Typography>
+                <Typography component="p">
+                  <IconButton
+                    className="iconBtn"
+                    edge="start"
+                    onClick={() => this.handleSocialBtn("linkedin")}
+                  >
+                    <LinkedInIcon fontSize="inherit" />
+                  </IconButton>
+                  <IconButton
+                    className="iconBtn"
+                    edge="end"
+                    onClick={() => this.handleSocialBtn("github")}
+                  >
+                    <GitHubIcon fontSize="inherit" />
+                  </IconButton>
+                </Typography>
+              </div>
             </div>
           </ScrollAnimation>
         </div>
@@ -56,34 +116,7 @@ export default class AboutMe extends React.Component {
           <ScrollAnimation animateIn="fadeIn">
             <div className="full-height">
               <div className="about-me-graphics">
-                <div className="row">
-                  <div className="organized">
-                    <div className="icon">
-                      <EventNoteIcon />
-                    </div>
-                    <p>Organized</p>
-                  </div>
-                  <div className="collaborative">
-                    <div className="icon">
-                      <PeopleIcon />
-                    </div>
-                    <p>Collaborative</p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="responsive">
-                    <div className="icon">
-                      <DevicesIcon />
-                    </div>
-                    <p>Responsive</p>
-                  </div>
-                  <div className="intuitive">
-                    <div className="icon">
-                      <EmojiObjectsIcon />
-                    </div>
-                    <p>Intuitive</p>
-                  </div>
-                </div>
+                <div className="row"></div>
               </div>
             </div>
           </ScrollAnimation>

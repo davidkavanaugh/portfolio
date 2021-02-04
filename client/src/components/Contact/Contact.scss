@@ -1,16 +1,16 @@
 #contact {
-    color: black;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 100vh;
+  form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    height: 100vh;
-    form{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    form > * {
-        margin: 5px 5px;
-    }
+    flex-direction: column;
+    width: 100%;
+  }
+  form > * {
+    margin: 5px 5px;
+  }
 }

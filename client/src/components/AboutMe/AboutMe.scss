@@ -86,13 +86,14 @@ a:active {
 
 .about-me-profilePic {
   width: 200px;
+  height: 200px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
   img {
     border-radius: 50%;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
 
